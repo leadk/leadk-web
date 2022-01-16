@@ -1,0 +1,78 @@
+buildscript {
+    // ext : 전역변수 생성
+    ext {
+        springBootVersion = '2.1.7.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    // 스프링 부트 그레이들 플러그인을 의존성으로 받겠다는 의미.
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+// 스프링부트 필수 플러그인
+apply plugin : 'java'
+apply plugin : 'eclipse'
+apply plugin : 'org.springframework.boot'
+apply plugin : 'io.spring.dependency-management'
+
+group 'com.leadk.web'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+// repositories : 의존성 라이브러리 원격 저장소 지정
+// mavenCentral : 기존 원격 저장소, 업로드시 많은 과정과 설정필요
+// jcenter : 업로드 간편화, 라이브러리 업로드시 mavenCentral 으로 업로드 자동화도 가능
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+buildscript {
+    // ext : 전역변수 생성
+    ext {
+        springBootVersion = '2.1.7.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    // 스프링 부트 그레이들 플러그인을 의존성으로 받겠다는 의미.
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+// 스프링부트 필수 플러그인
+apply plugin : 'java'
+apply plugin : 'eclipse'
+apply plugin : 'org.springframework.boot'
+apply plugin : 'io.spring.dependency-management'
+
+group 'com.leadk.web'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+// repositories : 의존성 라이브러리 원격 저장소 지정
+// mavenCentral : 기존 원격 저장소, 업로드시 많은 과정과 설정필요
+// jcenter : 업로드 간편화, 라이브러리 업로드시 mavenCentral 으로 업로드 자동화도 가능
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    // compile, testComplie
+    implementation('org.springframework.boot:spring-boot-starter-web')
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    //implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    //implementation 'org.springframework.boot:spring-boot-starter-web'
+    //implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    //testImplementation('org.springframework.boot:spring-boot-starter-test') {
+    //exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    //}
+}
